@@ -1,0 +1,40 @@
+<div>
+    <div class="mainbody" style="height: 100vh; width: 100vw; background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+    background-image: url(https://raw.githubusercontent.com/karanjadhav/karanjadhav.github.io/master/digibar.jpg);">
+
+<a class="btn btn-info" (click)="goToBookList()">Back To Home</a>
+<table class="table table-striped" style="background-color: whitesmoke; margin-top: 10vh;">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>Book Name</th>
+            <th>Author Name</th>
+            <th>Genre</th>
+            <th>Publisher</th>
+            <th>Cost</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let exreq of exchangeRequests">
+            <td >{{exreq.requesterUserId}}</td>
+            <td>{{exreq.requesterBookTitle}}</td>
+            <td>{{exreq.requesterBookAuthor}}</td>
+            <td>{{exreq.requesterBookGenre}}</td>
+            <td>{{exreq.requesterBookPublisher}}</td>
+            <td>{{exreq.requesterBookCost}}</td>         
+            <td>
+                <button (click)="orderBook(exreq.exchangeId)" class="btn btn-outline-success mr-2">Accept</button>
+                <button (click)="denyBook(exreq.exchangeId)" class="btn btn-outline-danger">deny</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+
+
+    </div>
+</div>

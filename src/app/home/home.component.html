@@ -1,0 +1,67 @@
+<div>
+    <div class="mainbody" style="height: 100vh; width: 100vw; background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:white;
+    background-image: url(https://raw.githubusercontent.com/karanjadhav/karanjadhav.github.io/master/digibar.jpg);">
+        <div class="navybar bg-primary" style=" padding-top: 3vh; padding-bottom: 3vh;display: flex; flex-direction: row; width: 100vw;">
+            <div class="col-1" style="font-size: medium;">
+                
+            </div>
+
+            <div class="col-11" style="display: flex;">                
+                <a class="btn btn-success" (click)="addBookBtnClick()" style="margin-left: 3vw; margin-right: 2vw;">Add Book</a>
+                <a class="btn btn-success" (click)="profileBtnClick()" style="margin-left: 1vw; margin-right: 2vw;">Profile</a>
+                <a class="btn btn-success" (click)="excReqBtnClick()" style="margin-left: 1vw; margin-right: 2vw;">Exchange Requests</a>
+                <a class="btn btn-success" (click)="myReqBtnClick()" style="margin-left: 1vw; margin-right: 3vw;">My Requests</a> 
+                <button class="btn btn-danger" (click)="logoutFunction()" style="margin-left: 32vw; margin-right: 0vw;">Logout</button>
+            </div>
+   
+        </div> 
+        <h1 class="container" style="margin-top: 8vh; color: white; padding-bottom: 5vh; background-color:rgba(194, 104, 41, 0.37);">Book List</h1>
+
+<div class="container">
+
+<table class="table table-striped text-light" style="background-color: rgba(139, 69, 19, 0.37);">
+    <thead>
+        <tr>
+            
+            <th>Book Name</th>
+            <th>Author Name</th>
+            <th>Genre</th>
+            <th>Publisher</th>
+            <th>Cost</th>
+            <th>Offer</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let b of books">
+            
+            <td>{{b.title}}</td>
+            <td>{{b.author}}</td>
+            <td>{{b.genre}}</td>
+            <td>{{b.publisher}}</td>
+            <td>{{b.cost}}</td>
+           <!--<select ng-model="selectedBook"   class="form-control" (click)="clickHere(selectedBook1)" selected-option="selectedBook1" >
+                <option >Select Book:</option>
+                <option  *ngFor= "let mybook of mybooks" [ngValue]="mybook">{{mybook.title}}</option>
+            </select>
+            --> 
+            <!--value={{mybook.bookId}}-->
+            <select [(ngModel)]="selectedBook1"   class="form-control" (click)="clickHere()" style="margin-top: 1vh;" >
+               <option >Select Book:</option> 
+                <option  *ngFor= "let mybook of mybooks" [ngValue]="mybook">{{mybook.title}}</option>
+            </select>
+           
+            <td>
+                <button (click)="exchangeBook(b.bookId)" class="btn btn-info" style="margin-bottom: 2vh;">Exchange</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>  
+</div>
+    </div>
+
+</div>
