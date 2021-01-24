@@ -9,7 +9,7 @@ export class OrderService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private baseURL = "http://ec2-3-90-222-9.compute-1.amazonaws.com:8080/order"
+  private baseURL = "http://ec2-54-197-43-134.compute-1.amazonaws.com:8080/order"
 
   placeOrder(exchangeId:number): Observable<Object> {
     return this.httpClient.get(`${this.baseURL}/${exchangeId}`);

@@ -7,11 +7,11 @@ import { Book } from './book';
 })
 export class BookService {
 
-  private baseURL = "http://ec2-3-90-222-9.compute-1.amazonaws.com:8080/books"
+  private baseURL = "http://ec2-54-197-43-134.compute-1.amazonaws.com:8080/books"
 
   constructor(private httpClient: HttpClient) { }
 
-  private getListURL = "http://ec2-3-90-222-9.compute-1.amazonaws.com:8080/books1"
+  private getListURL = "http://ec2-54-197-43-134.compute-1.amazonaws.com:8080/books1"
   getBookList(userId:number): Observable<Book[]> {
     return this.httpClient.get<Book[]>(`${this.getListURL}/${userId}`);
   }
@@ -26,7 +26,7 @@ export class BookService {
   }
   
 
-  private getListByIdURL = "http://ec2-3-90-222-9.compute-1.amazonaws.com:8080/books2"
+  private getListByIdURL = "http://ec2-54-197-43-134.compute-1.amazonaws.com:8080/books2"
   getBookListByUserId(userId:number): Observable<Book[]> {
     return this.httpClient.get<Book[]>(`${this.getListByIdURL}/${userId}`);
   }
@@ -37,7 +37,7 @@ export class BookService {
   }
 
   //Book Update by Id
-  private updateBookByIdURL = "http://ec2-3-90-222-9.compute-1.amazonaws.com:8080/books3"
+  private updateBookByIdURL = "http://ec2-54-197-43-134.compute-1.amazonaws.com:8080/books3"
   updateBook(bookId:number,book:Book):Observable<Object>{
     return this.httpClient.put(`${this.updateBookByIdURL}/${bookId}`,book);
   }

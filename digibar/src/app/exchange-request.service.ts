@@ -14,7 +14,7 @@ export class ExchangeRequestService {
   
   constructor(private httpClient: HttpClient) { }
 
-  private baseURL = "http://ec2-3-90-222-9.compute-1.amazonaws.com:8080/exchangereq"
+  private baseURL = "http://ec2-54-197-43-134.compute-1.amazonaws.com:8080/exchangereq"
 
   addBook(bookId:number,book: Book): Observable<Object> {
     return this.httpClient.post(`${this.baseURL}/${bookId}`, book);
@@ -30,13 +30,13 @@ export class ExchangeRequestService {
   }
 
   //get request By Id for delete puspose
-  private baseURL1 = "http://ec2-3-90-222-9.compute-1.amazonaws.com:8080/exchangereq2"
+  private baseURL1 = "http://ec2-54-197-43-134.compute-1.amazonaws.com:8080/exchangereq2"
   getRequestByExchangeId(exchangeId: number): Observable<ExchangeRequest> {
     return this.httpClient.get<ExchangeRequest>(`${this.baseURL1}/${exchangeId}`);
   }
 
   // for Sent or pending Req
-  private baseURL2 = "http://ec2-3-90-222-9.compute-1.amazonaws.com:8080/exchangereq1"
+  private baseURL2 = "http://ec2-54-197-43-134.compute-1.amazonaws.com:8080/exchangereq1"
   getSentRequestList(userId:number): Observable<ExchangeRequest[]> {
     return this.httpClient.get<ExchangeRequest[]>(`${this.baseURL2}/${userId}`);
   }
